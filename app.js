@@ -22,17 +22,35 @@ página.
 */
 //--------------------------1.-----------------------------
 function agregarAmigo(){
-   let nameAmigo = document.getElementById('amigo').value;//
+   let nameAmigo = document.getElementById("amigo").value;//
    
    if (nameAmigo.trimp() === ""){
-      alert("Por favor ingrese un nombre ");
-   }else{
-      amigos.push(nameAmigo);
-      document.getElementById(amigos).value = "";
 
+      alert("Por favor ingrese un nombre ");
+
+   }else{
+
+      amigos.push(nameAmigo);
+      document.getElementById("amigos").value = "";
+      verAmigos();
       
    }
 }
 
 //-------------------------------2.------------------------
+function verAmigos() {
+   let listaAmigos = document.getElementById("listaAmigos");
+   listaAmigos.innerHTML = "";
+
+   for (let index = 0; index < amigos.length; index++){
+      const elemento = amigos[index];
+
+      let listaHTML = document.createElement("li")
+      listaHTML.textContent=elemento;
+      listaAmigos.append(listaHTML);
+   }
+
+
+
+}
 
