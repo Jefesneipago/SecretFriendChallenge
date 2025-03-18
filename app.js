@@ -26,7 +26,7 @@ function agregarAmigo(){
    
    if (nameAmigo.trimp() === ""){
 
-      alert("Por favor ingrese un nombre ");
+      alert("Por favor ingrese un nombre ");//Mensaje que emerge si el usuario deja en blanco el input
 
    }else{
 
@@ -54,3 +54,14 @@ function verAmigos() {
 
 }
 
+//-------------------------3.----------------------------------
+
+function sortearAmigo(){
+   let cantidadAmigos = amigos.length;
+   if (cantidadAmigos === 0){
+
+      let indiceAmigo = Math.floor(Math.random()* cantidadAmigos);
+      let resultadoHTML = document.getElementById("resultado");
+      resultadoHTML.innerHTML = amigos[indiceAmigo];
+   }
+}
