@@ -170,7 +170,7 @@ ul {
     border-radius: 0 0 64px 64px;
     padding: 20px;
     width: 100%;
-    position: absolute;
+    position: relative;
     bottom: 0;
 }
 
