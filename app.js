@@ -25,15 +25,11 @@ function agregarAmigo(){
    let nameAmigo = document.getElementById("amigo").value;//
    
    if (nameAmigo.trimp() === ""){
-
       alert("Por favor ingrese un nombre ");//Mensaje que emerge si el usuario deja en blanco el input
-
-   }else{
-
+   }  else{
       amigos.push(nameAmigo);
       document.getElementById("amigos").value = "";
-      verAmigos();
-      
+      verAmigos();      
    }
 }
 
