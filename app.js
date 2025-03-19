@@ -24,7 +24,7 @@ página.
 let amigos = [];
 //--------------------------1.-----------------------------
 function agregarAmigo(){
-   let nameAmigo = document.getElementById("amigo").value.trimp();//
+   let nameAmigo = document.getElementById("amigo").value.trim();//
    
    if (nameAmigo === ""){
       alert("Por favor ingrese un nombre. ");//Mensaje que emerge si el usuario deja en blanco el input
@@ -46,7 +46,7 @@ function verAmigos() {
       let listaHTML = document.createElement("li");
       listaHTML.textContent = elemento;
       listaAmigos.appendChild(listaHTML);
-   });//Optimizamos el for con un forEach
+   });//Optimizamos el for pon un forEach
 
 }
 
@@ -54,7 +54,7 @@ function verAmigos() {
 
 function sortearAmigo(){
    let cantidadAmigos = amigos.length;
-   
+
    if (cantidadAmigos === 0) {
       alert("No hay amigos en la lista. Agrega al menos uno."); // Mensaje si no hay amigos
    } else {
