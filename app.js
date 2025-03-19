@@ -20,44 +20,46 @@ resultado en pantalla.
 página.
 
 */
+// Array para almacenar los amigos
+let amigos = [];
 //--------------------------1.-----------------------------
 function agregarAmigo(){
-   let nameAmigo = document.getElementById("amigo").value;//
+   let nameAmigo = document.getElementById("amigo").value.trimp();//
    
-   if (nameAmigo.trimp() === ""){
-      alert("Por favor ingrese un nombre ");//Mensaje que emerge si el usuario deja en blanco el input
+   if (nameAmigo === ""){
+      alert("Por favor ingrese un nombre. ");//Mensaje que emerge si el usuario deja en blanco el input
    }  else{
       amigos.push(nameAmigo);
-      document.getElementById("amigos").value = "";
-      verAmigos();      
+      document.getElementById("amigos").value = ""; //Limpia el input luego Agragar
+      document.getElementById("amigo").focus(); // Enfocar el input después de agregar facilita la inserción
+
+      verAmigos();      //actualizamos la lista
    }
 }
 
-//-------------------------------2.------------------------
+//2.--------------------------------------------------------------------
 function verAmigos() {
    let listaAmigos = document.getElementById("listaAmigos");
-   listaAmigos.innerHTML = "";
+   listaAmigos.innerHTML = ""; //Limpiamos la lista antes de actualizar
 
-   for (let index = 0; index < amigos.length; index++){
-      const elemento = amigos[index];
-
-      let listaHTML = document.createElement("li")
-      listaHTML.textContent=elemento;
-      listaAmigos.append(listaHTML);
-   }
-
-
+   amigos.forEach((elemento) => {
+      let listaHTML = document.createElement("li");
+      listaHTML.textContent = elemento;
+      listaAmigos.appendChild(listaHTML);
+   });//Optimizamos el for con un forEach
 
 }
 
-//-------------------------3.----------------------------------
+//3.-------------------------------------------------------------------
 
 function sortearAmigo(){
    let cantidadAmigos = amigos.length;
-   if (cantidadAmigos === 0){
-
-      let indiceAmigo = Math.floor(Math.random()* cantidadAmigos);
+   
+   if (cantidadAmigos === 0) {
+      alert("No hay amigos en la lista. Agrega al menos uno."); // Mensaje si no hay amigos
+   } else {
+      let indiceAmigo = Math.floor(Math.random() * cantidadAmigos);
       let resultadoHTML = document.getElementById("resultado");
-      resultadoHTML.innerHTML = amigos[indiceAmigo];
+      resultadoHTML.innerHTML = `Tu Amigo secreto es : ${amigos[indiceAmigo]}`; // Mostrar el resultado
    }
 }
