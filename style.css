@@ -160,3 +160,22 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secondary);
+    border: 1px solid #000;
+    border-radius: 0 0 64px 64px;
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer p {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: var(--color-primary);
+}

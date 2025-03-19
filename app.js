@@ -23,14 +23,14 @@ página.
 // Array para almacenar los amigos
 let amigos = [];
 //--------------------------1.-----------------------------
-function agregarAmigo(){
+function agregarAmigo() {
    let nameAmigo = document.getElementById("amigo").value.trim();//
    
    if (nameAmigo === ""){
       alert("Por favor ingrese un nombre. ");//Mensaje que emerge si el usuario deja en blanco el input
-   }  else{
+   }  else {
       amigos.push(nameAmigo);
-      document.getElementById("amigos").value = ""; //Limpia el input luego Agragar
+      document.getElementById("amigo").value = ""; //Limpia el input luego Agragar
       document.getElementById("amigo").focus(); // Enfocar el input después de agregar facilita la inserción
 
       verAmigos();      //actualizamos la lista
